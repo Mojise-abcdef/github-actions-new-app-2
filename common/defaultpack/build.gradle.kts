@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.material)
 
     implementation(libs.thirdparty.lottie)
+    implementation(libs.thirdparty.glide)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
