@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "github-actions-default-fake"
+rootProject.name = "github-actions-new-app-2"
 include(":app")
 include(":common:defaultpack")
