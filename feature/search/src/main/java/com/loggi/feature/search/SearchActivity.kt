@@ -17,11 +17,11 @@ class SearchActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         function1()
+        function2()
     }
 
-    private fun function1() {
-        Log.d(TAG, "function1()")
-    }
+    private fun function1() = Log.d(TAG, "function1()")
+    private fun function2() = Log.d(TAG, "function2()")
 
     companion object {
         private const val TAG = "SearchActivity"
