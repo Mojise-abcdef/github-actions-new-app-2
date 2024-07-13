@@ -20,6 +20,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 thirdparty-lottie = { group = "com.airbnb.android", name = "lottie", version = "6.0.1" }
+thirdparty-glide = { group = "com.github.bumptech.glide", name = "glide", version = "4.9.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
