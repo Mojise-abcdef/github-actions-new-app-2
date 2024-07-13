@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "github-actions-new-app-2"
 include(":app")
 include(":common:defaultpack")
+include(":feature:search")
