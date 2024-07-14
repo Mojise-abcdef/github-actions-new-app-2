@@ -30,15 +30,16 @@ jobs:
           ls -al self-app
           ls -al default
           pwd
-#
-#      - name: Pull latest changes from Default project
-#        run: |
-#          cd self-app
-#          git remote add default "default"
-#          git pull default master
-#
-#
-#
+          echo ${{ github.repository }}
+
+      - name: Pull latest changes from Default project
+        run: |
+          cd self-app
+          git remote add default "/default"
+          git pull default master
+
+
+
 #      - name: Sync Changes from A Repository
 #        run: |
 #          git checkout master
