@@ -18,13 +18,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Mojise/github-actions-default-fake
-          path: default-fake
+          path: default
 
       - name: Pull latest changes from Default project
         run: |
-          cd default-fake
-          git pull origin main
+          cd default
+          git pull origin master
 
       - name: Merge Default changes into app project
         run: |
-          git merge default-fake/main
+          git merge default/master
