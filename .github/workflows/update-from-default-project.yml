@@ -35,11 +35,11 @@ jobs:
       - name: Pull latest changes from Default project
         run: |
           cd self-app
+          git config --global user.email "jsl663663@gmail.com"
+          git config --global user.name "dev-loggi"
           git remote add default "/home/runner/work/github-actions-new-app-2/github-actions-new-app-2/default"
           git remote -v
           git fetch --unshallow default
-          git branch
-          git checkout master
           git merge default/master --allow-unrelated-histories
 #          git pull default master
 
