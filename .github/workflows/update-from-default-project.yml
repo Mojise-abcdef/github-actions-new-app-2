@@ -38,8 +38,10 @@ jobs:
           cd self-app
           git config user.name "jsl663663@gmail.com"
           git config user.email "dev-loggi"
-          git config pull.rebase false
-          git pull https://github.com/Mojise/github-actions-default-fake.git master
+          git remote add default https://github.com/Mojise/github-actions-default-fake.git master
+          git remote -v
+          git fetch --unshallow default
+          git merge --allow-unrelated-histories default/master
 
 #          git pull default https://x-access-token:${ACCESS_TOKEN}@github.com/Mojise/github-actions-default-fake.git master
 #          git remote add default https://x-access-token:${ACCESS_TOKEN}@github.com/Mojise/github-actions-default-fake.git master
