@@ -1,0 +1,30 @@
+# Default 프로젝트의 변경사항에 대한 업데이트 이벤트를 수신했을 때 실행되는 워크플로우
+# 이벤트를 수신하게 되면, Default 프로젝트의 변경사항을 현재 이 워크플로우가 실행되는 프로젝트에 병합한다.
+name: Update from Default Project
+
+on:
+  repository_dispatch:
+    types: [default-update]
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout app project
+        uses: actions/checkout@v4
+
+      - name: Checkout Default project
+        uses: actions/checkout@v4
+        with:
+          repository: Mojise/github-actions-default-fake
+          path: default-fake
+
+      - name: Pull latest changes from Default project
+        run: |
+          cd default-fake
+          git pull origin main
+
+      - name: Merge Default changes into app project
+        run: |
+          git merge default-fake/main
