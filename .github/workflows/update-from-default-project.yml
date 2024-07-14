@@ -39,6 +39,7 @@ jobs:
           git remote -v
           git fetch --unshallow default
           git branch
+          git branch master
           git merge default/master
 #          git pull default master
 
