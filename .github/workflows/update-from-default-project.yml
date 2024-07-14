@@ -38,8 +38,10 @@ jobs:
           cd self-app
           git config --global user.name "jsl663663@gmail.com"
           git config --global user.email "dev-loggi"
-          git remote add default https://x-access-token:${ACCESS_TOKEN}@github.com/Mojise/github-actions-default-fake.git master
-          git pull default
+          git pull default https://x-access-token:${ACCESS_TOKEN}@github.com/Mojise/github-actions-default-fake.git master
+
+#          git remote add default https://x-access-token:${ACCESS_TOKEN}@github.com/Mojise/github-actions-default-fake.git master
+#          git pull
 
 #      - name: Pull latest changes from Default project
 #        run: |
