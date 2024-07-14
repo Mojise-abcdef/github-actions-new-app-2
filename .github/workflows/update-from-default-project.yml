@@ -35,6 +35,7 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ORG_GITHUB_PAT }}
         run: |
+          cd self-app
           git config --global user.name "jsl663663@gmail.com"
           git config --global user.email "dev-loggi"
           git remote add default https://x-access-token:${ORG_GITHUB_PAT}@github.com/Mojise/github-actions-default-fake.git 
