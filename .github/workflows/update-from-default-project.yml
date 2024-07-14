@@ -23,8 +23,8 @@ jobs:
       - name: Pull latest changes from Default project
         run: |
           cd default
-          git pull origin master
+          git pull origin main
 
       - name: Merge Default changes into app project
         run: |
-          git merge default/master
+          git merge default/main
