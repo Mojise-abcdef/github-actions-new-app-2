@@ -18,9 +18,31 @@ jobs:
         run: |
           ls -al
 
-      - name: Pull latest changes from Default project
+#      - name: Pull latest changes from Default project
+#        run: |
+#          git pull https://github.com/Mojise/github-actions-default-fake.git master
+
+      - name: Checkout Default project
+        uses: actions/checkout@v4
+        with:
+          repository: Mojise/github-actions-default-fake
+          token: ${{ secrets.ORG_GITHUB_PAT }}
+          ref: master
+
+      - name: Sync Changes from A Repository
         run: |
-          git pull https://github.com/Mojise/github-actions-default-fake.git master
+          git checkout master
+          git merge --no-commit --no-ff FETCH_HEAD
+          git commit -m "Sync changes from A repository"
+          git push origin master
+
+#          # A 저장소에서 B 저장소로 변경 사항을 병합
+#          git config user.email "actions@github.com"
+#          git config user.name "GitHub Actions"
+#          git checkout main  # B 저장소의 메인 브랜치로 변경
+#          git merge --no-commit --no-ff FETCH_HEAD  # A 저장소의 변경사항을 병합
+#          git commit -m "Sync changes from A repository"
+#          git push origin main  # B 저장소에 변경 사항 푸시
 #
 #      - name: Checkout Default project
 #        uses: actions/checkout@v4
