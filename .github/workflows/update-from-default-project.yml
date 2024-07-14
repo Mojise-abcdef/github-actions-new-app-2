@@ -27,12 +27,15 @@ jobs:
       - name: Test
         run: |
           ls -al
-
-      - name: Pull latest changes from Default project
-        run: |
-          cd self-app
-          git remote add default "default"
-          git pull default master
+          ls -al self-app
+          ls -al default
+          pwd
+#
+#      - name: Pull latest changes from Default project
+#        run: |
+#          cd self-app
+#          git remote add default "default"
+#          git pull default master
 #
 #
 #
