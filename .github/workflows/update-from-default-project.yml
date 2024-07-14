@@ -16,31 +16,39 @@ jobs:
         with:
           path: self-app
 
-      - name: Checkout Default project
-        uses: actions/checkout@v4
-        with:
-          repository: Mojise/github-actions-default-fake
-          token: ${{ secrets.ORG_GITHUB_PAT }}
-          ref: master
-          path: default
+#      - name: Checkout Default project
+#        uses: actions/checkout@v4
+#        with:
+#          repository: Mojise/github-actions-default-fake
+#          token: ${{ secrets.ORG_GITHUB_PAT }}
+#          ref: master
+#          path: default
 
       - name: Test
         run: |
           ls -al
           ls -al self-app
-          ls -al default
           pwd
           echo ${{ github.repository }}
 
-      - name: Pull latest changes from Default project
+      - name: Pull Changes
+        env:
+          ACCESS_TOKEN: ${{ secrets.ORG_GITHUB_PAT }}
         run: |
-          cd self-app
-          git config --global user.email "jsl663663@gmail.com"
-          git config --global user.name "dev-loggi"
-          git remote add default "/home/runner/work/github-actions-new-app-2/github-actions-new-app-2/default"
-          git remote -v
-          git fetch --unshallow default
-          git merge default/master --allow-unrelated-histories
+          git config --global user.name "jsl663663@gmail.com"
+          git config --global user.email "dev-loggi"
+          git remote add default https://x-access-token:${ORG_GITHUB_PAT}@github.com/Mojise/github-actions-default-fake.git 
+          git pull default
+
+#      - name: Pull latest changes from Default project
+#        run: |
+#          cd self-app
+#          git config --global user.email "jsl663663@gmail.com"
+#          git config --global user.name "dev-loggi"
+#          git remote add default "/home/runner/work/github-actions-new-app-2/github-actions-new-app-2/default"
+#          git remote -v
+#          git fetch --unshallow default
+#          git merge default/master --allow-unrelated-histories
 #          git pull default master
 
 
