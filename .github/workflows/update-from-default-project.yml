@@ -36,8 +36,8 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ORG_GITHUB_PAT }}
         run: |
           cd self-app
-          git config global user.name "jsl663663@gmail.com"
-          git config global user.email "dev-loggi"
+          git config user.name "jsl663663@gmail.com"
+          git config user.email "dev-loggi"
           git config pull.rebase false
           git pull https://github.com/Mojise/github-actions-default-fake.git master
 
