@@ -36,7 +36,7 @@ jobs:
         run: |
           cd self-app
           git remote add default "/home/runner/work/github-actions-new-app-2/github-actions-new-app-2/default"
-          git pull default master
+#          git pull default master
 
 
 
