@@ -11,16 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout app project
+      - name: Checkout self-app project
         uses: actions/checkout@v4
-
-      - name: Test
-        run: |
-          ls -al
-
-#      - name: Pull latest changes from Default project
-#        run: |
-#          git pull https://github.com/Mojise/github-actions-default-fake.git master
+        with:
+          path: self-app
 
       - name: Checkout Default project
         uses: actions/checkout@v4
@@ -28,13 +22,26 @@ jobs:
           repository: Mojise/github-actions-default-fake
           token: ${{ secrets.ORG_GITHUB_PAT }}
           ref: master
+          path: default
 
-      - name: Sync Changes from A Repository
+      - name: Test
         run: |
-          git checkout master
-          git merge --no-commit --no-ff FETCH_HEAD
-          git commit -m "Sync changes from A repository"
-          git push origin master
+          ls -al
+
+      - name: Pull latest changes from Default project
+        run: |
+          cd self-app
+          git remote add default "default"
+          git pull default master
+#
+#
+#
+#      - name: Sync Changes from A Repository
+#        run: |
+#          git checkout master
+#          git merge --no-commit --no-ff FETCH_HEAD
+#          git commit -m "Sync changes from A repository"
+#          git push origin master
 
 #          # A 저장소에서 B 저장소로 변경 사항을 병합
 #          git config user.email "actions@github.com"
