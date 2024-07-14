@@ -40,7 +40,7 @@ jobs:
           git fetch --unshallow default
           git branch
           git checkout master
-          git merge default/master
+          git merge default/master --allow-unrelated-histories
 #          git pull default master
 
 
