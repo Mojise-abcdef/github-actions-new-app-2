@@ -19,11 +19,13 @@ class SearchActivity : AppCompatActivity() {
         function1()
         function2()
         function3WithGlide()
+        function4()
     }
 
     private fun function1() = Log.d(TAG, "function1()")
     private fun function2() = Log.d(TAG, "function2()")
     private fun function3WithGlide() = Log.d(TAG, "function3ForGlide()")
+    private fun function4() = Log.d(TAG, "function4()")
 
     companion object {
         private const val TAG = "SearchActivity"
