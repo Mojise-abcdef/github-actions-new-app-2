@@ -17,6 +17,10 @@ jobs:
       - name: Test
         run: |
           ls -al
+
+      - name: Pull latest changes from Default project
+        run: |
+          git pull https://github.com/Mojise/github-actions-default-fake.git master
 #
 #      - name: Checkout Default project
 #        uses: actions/checkout@v4
