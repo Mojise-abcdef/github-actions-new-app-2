@@ -42,7 +42,7 @@ jobs:
           git remote add default https://github.com/Mojise/github-actions-default-fake.git
           git remote -v
           git fetch --unshallow default
-          git merge --allow-unrelated-histories default/master
+          git merge --allow-unrelated-histories --no-edit default/master
 
 #          git pull default https://x-access-token:${ACCESS_TOKEN}@github.com/Mojise/github-actions-default-fake.git master
 #          git remote add default https://x-access-token:${ACCESS_TOKEN}@github.com/Mojise/github-actions-default-fake.git master
