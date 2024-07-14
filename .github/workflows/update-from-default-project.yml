@@ -38,6 +38,7 @@ jobs:
           cd self-app
           git config user.name "jsl663663@gmail.com"
           git config user.email "dev-loggi"
+          git config merge.commit no
           git remote add default https://github.com/Mojise/github-actions-default-fake.git
           git remote -v
           git fetch --unshallow default
